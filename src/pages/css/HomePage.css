@@ -1,0 +1,330 @@
+
+.title-head{
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 0.02em;
+
+    color: #DF9C43;
+}
+.subtitle-head{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+
+    color: #292929;
+}
+
+.columnHead{
+    padding-top: 180px;
+    padding-left: 140px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .title-head{
+        font-size: 24px;
+        line-height: unset;
+    }
+    .subtitle-head{
+        font-size: 16px;
+        line-height: unset;
+    }
+    .columnHead{
+        padding-top: 25px;
+        padding-left: 45px;
+    }
+
+    .titleBig{
+        font-size: 33px !important;
+    }
+
+    .titleBig2{
+        font-size: 33px !important;
+    }
+
+    .text1{
+        font-size: 14px !important;
+        line-height: unset !important;
+    }
+
+    .text2{
+        font-size: 18px !important;
+        line-height: unset !important;
+    }
+
+    .service-title{
+        font-size: 17px !important;
+        line-height: unset !important;
+    }
+  }
+
+.merchant-section{
+    height: 214px;
+    background-color: #DF9C43;
+    display: flex;
+    flex-direction: row;
+    background-repeat: repeat-x;
+}
+
+.merchant-item{
+    margin-top: 50px;
+    margin-left: 35px;
+    align-items: flex-start;
+    padding: 12px;
+    position: static;
+    max-width: 104px;
+    max-height: 104px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+.service-title{
+    font-family: 'Exo';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+}
+
+.sub-title-service{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+}
+
+.icon-img{
+    margin-bottom: 10px
+}
+
+.layout4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* position: absolute; */
+    /* width: 1440px; */
+    /* height: 543px; */
+    left: 0px;
+
+    background: #DF9C43;
+}
+
+.layout5 {
+    width: 100%;
+    align-items: center;
+    /* position: absolute; */
+    left: 0px;
+    background: #FFFFFF;
+}
+
+.layout6 {
+    width: 100%;
+    align-items: center;
+    /* position: absolute; */
+    left: 0px;
+
+    background: #707070;
+}
+
+.titleBig {
+    position: static;
+    /* width: 1160px; */
+    height: 64px;
+    left: 140px;
+    top: 80px;
+
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 64px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.titleBig2 {
+    position: static;
+    /* width: 1160px; */
+    height: 64px;
+    left: 140px;
+    top: 80px;
+
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 64px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #DF9C43;
+}
+
+.titleBig3 {
+    position: static;
+    /* width: 483px; */
+    height: 32px;
+    left: 140px;
+    top: 40px;
+
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.imgLayAPI {
+    max-width: 253px;
+    width: 100%;
+    height: auto;
+    padding: 8px 14px;
+}
+
+.logoEZL {
+    /* position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 23.75%;
+    bottom: 23.12%; */
+}
+.logoStore{
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+}
+
+.logoMobileStore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 354.67px;
+    height: 112px;
+    left: 0px;
+    top: 45px;
+}
+
+.logoContactUs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    max-width: 208px;
+    width: 100%;
+    height: auto;
+    left: 0px;
+    top: 45px;
+}
+
+.text1 {
+    position: static;
+    /* width: 346.67px; */
+    /* height: 99px; */
+    left: 0px;
+    top: 184px;
+    margin-top: 20px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.text2 {
+    left: 0px;
+    top: 0px;
+    margin-top: 20px;
+
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height */
+
+    letter-spacing: 0.02em;
+
+    color: #292929;
+}
+
+.text3 {
+    position: static;
+    /* width: 346.67px; */
+    /* height: 88px; */
+    left: 0px;
+    top: 44px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+
+    color: #292929;
+}
+
+.text4 {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.text5 {
+    position: static;
+    /* width: 346.67px; */
+    height: 66px;
+    left: 0px;
+    top: 45px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
