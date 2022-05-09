@@ -20,6 +20,11 @@ function NavbarComponent() {
     window.location.reload();
   }
 
+  function aboutUsHandle() {
+    history.push('/AboutUs');
+    window.location.reload();
+  }
+
   return (
     <>
     <Navbar expand="lg" style={{width: '100%'}}>
@@ -57,14 +62,14 @@ function NavbarComponent() {
                 </NavDropdown>
                 <Nav.Link href="#features" className='item-navbar'>Merchant & Partner</Nav.Link>
                 <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1" style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item href="#action/3.2">Our Vision</NavDropdown.Item>
+                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item href="#action/3.3">Our Journey</NavDropdown.Item>
+                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
                   <br/>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Career</NavDropdown.Item>
+                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Career</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#pricing" className='item-navbar'>FAQ</Nav.Link>
                 <Nav.Link href="#pricing" className='item-navbar'>EN | <span style={{color: '#FFFFFF'}}>ID</span></Nav.Link>

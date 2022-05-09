@@ -1,0 +1,118 @@
+.title-head{
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 0.02em;
+
+    color: #DF9C43;
+}
+.subtitle-head{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+
+    color: #292929;
+}
+
+.subtitle-head2 {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.columnHead{
+    padding-top: 180px;
+    padding-left: 140px;
+}
+
+@media only screen and (max-width: 600px) {
+    .title-head{
+        font-size: 24px;
+        line-height: unset;
+    }
+    .subtitle-head{
+        font-size: 16px;
+        line-height: unset;
+    }
+    .columnHead{
+        padding-top: 25px;
+        padding-left: 45px;
+    }
+
+    .titleBig{
+        font-size: 33px !important;
+    }
+
+    .titleBig2{
+        font-size: 33px !important;
+    }
+
+    .text1{
+        font-size: 14px !important;
+        line-height: unset !important;
+    }
+
+    .text2{
+        font-size: 18px !important;
+        line-height: unset !important;
+    }
+
+    .service-title{
+        font-size: 17px !important;
+        line-height: unset !important;
+    }
+}
+
+.layout4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+
+    background: #DF9C43;
+}
+
+.textWhite {
+    position: static;
+    width: 1160px;
+    height: 66px;
+    left: 0px;
+    top: 96px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+
+.textBlack {
+    position: static;
+    width: 1160px;
+    height: 132px;
+    left: 0px;
+    top: 96px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+
+    color: #292929;
+}
