@@ -9,6 +9,7 @@ import {
   useHistory
 } from "react-router-dom";
 import HomePage from './pages/HomePage';
+import ProductServicePage from './pages/ProductsAndServices/ProductServicePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
+          <Route exact path="/productsandservices" component={ProductServicePage}/>
         </Switch>
       </Router>
     </div>
