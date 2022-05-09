@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl} from 'react-bootstrap';
 import EzeelinkIcon from '../assets/icon/ezee_icon.svg'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link} from 'react-router-dom';
 import dropdown from '../assets/icon/dropdown.svg'
 import './navbar.css'
 
@@ -11,7 +11,12 @@ function NavbarComponent() {
 
   function linkToProductsAndServices(e){
     e.preventDefault();
-    history.push('/productsandservices');
+    // history.push('/productsandservices');
+    // window.location.reload();
+  }
+
+  function navigateToSection(section){
+    history.push('/productsandservices', {section: section});
     window.location.reload();
   }
 
@@ -33,19 +38,19 @@ function NavbarComponent() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Electronic Money</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#emoneysection">Electronic Money</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Transfer Payment</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Voucher</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#transferpaymentsection">Transfer Payment</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#vouchersection">Voucher</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Wallet</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Bills & Credits</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#walletsection">Wallet</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#billscreditsection">Bills & Credits</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Loyalty</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="#loyaltysection">Loyalty</NavDropdown.Item></td>
                       </tr>
                     </tbody>
                   </table>

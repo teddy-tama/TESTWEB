@@ -17,8 +17,12 @@ import StarBlackIcon from '../../assets/icon/stars_black.svg'
 import MetodeBayarIcon from '../../assets/icon/Metode_Bayar.svg'
 import PersonalConsumerIcon from '../../assets/icon/PersonalConsumer.svg'
 import Footer from '../../component/Footer'
+import {useLocation} from 'react-router-dom'
 function ProductServicePage() {
     const isMobile = mobile();
+    const location = useLocation();
+
+    console.log(location.state);
   return (
     <>
         <Navbar/>
@@ -37,6 +41,10 @@ function ProductServicePage() {
                     </Row>
                 {/* </Container> */}
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <br/>
             <div className='layout4'>
             <br/>
@@ -95,12 +103,14 @@ function ProductServicePage() {
                 <br/>
                 <div style={isMobile ? {paddingLeft: 45} : {paddingLeft: 140}}>
                     <Row>
-                        <Col xs={12}>
-                            <img alt="" src={QrisIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span className='service-title'><b>QRIS</b></span>
-                            <br/>
-                            <br/>
-                            <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span>
+                        <Col xs={12} id={"qrissection"}>
+                            <div id="qrissection">
+                                <img alt="" src={QrisIcon} className='icon-img' id="qrissection" name="qrissection"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span className='service-title'><b>QRIS</b></span>
+                                <br/>
+                                <br/>
+                                <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span>
+                            </div>
                         </Col>
                         <Col xs={12}>
                             <img alt="" src={UangMasukIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
