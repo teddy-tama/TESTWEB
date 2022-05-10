@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Navbar from '../../component/NavbarComponent'
 import {Row, Col, Container} from 'react-bootstrap'
 import mobile from 'is-mobile'
@@ -18,11 +18,44 @@ import MetodeBayarIcon from '../../assets/icon/Metode_Bayar.svg'
 import PersonalConsumerIcon from '../../assets/icon/PersonalConsumer.svg'
 import Footer from '../../component/Footer'
 import {useLocation} from 'react-router-dom'
+import $ from 'jquery'
 function ProductServicePage() {
     const isMobile = mobile();
     const location = useLocation();
+    const section = location.state.section;
+    const [loading, SetLoading] = useState(true);
 
-    console.log(location.state);
+    useEffect(() => {
+        const onPageLoad = () => {
+            SetLoading(false);
+          };
+
+          if (document.readyState === "complete") {
+            onPageLoad();
+          } else {
+            window.addEventListener("load", onPageLoad);
+            return () => window.removeEventListener("load", onPageLoad);
+          }
+    },[])
+
+    console.log(loading);
+    if(!loading){
+        if(section === 'qris'){
+            document.getElementById( 'qrissection' ).scrollIntoView();
+        }else if(section === 'eMoney'){
+            document.getElementById( 'eMoneysection' ).scrollIntoView();
+        }else if(section === 'trfpayment'){
+            document.getElementById( 'trfpaymentsection' ).scrollIntoView();
+        }else if(section === 'voucher'){
+            document.getElementById( 'vouchersection' ).scrollIntoView();
+        }else if(section === 'wallet'){
+            document.getElementById( 'walletsection' ).scrollIntoView();
+        }else if(section === 'billsCredit'){
+            document.getElementById( 'billscreditsection' ).scrollIntoView();
+        }else if(section === 'loyalty'){
+            document.getElementById( 'loyaltysection' ).scrollIntoView();
+        }
+    }
   return (
     <>
         <Navbar/>
@@ -103,30 +136,30 @@ function ProductServicePage() {
                 <br/>
                 <div style={isMobile ? {paddingLeft: 45} : {paddingLeft: 140}}>
                     <Row>
-                        <Col xs={12} id={"qrissection"}>
+                        <Col xs={12}>
                             <div id="qrissection">
-                                <img alt="" src={QrisIcon} className='icon-img' id="qrissection" name="qrissection"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <img alt="" src={QrisIcon} className='icon-img' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span className='service-title'><b>QRIS</b></span>
                                 <br/>
                                 <br/>
                                 <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span>
                             </div>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="trfpaymentsection">
                             <img alt="" src={UangMasukIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Transfer Payment</b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>Get the convenience of free payment transfers to various banks throughout Indonesia!</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="walletsection">
                             <img alt="" src={EwalletIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>White-Label Wallet</b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>Upgrade your level of business transaction with a digital wallet that can be customized according to your characteristics and brand identity</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="loyaltysection">
                             <img alt="" src={StarBlackIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Loyalty</b></span>
                             <br/>
@@ -153,35 +186,35 @@ function ProductServicePage() {
                 <br/>
                 <div>
                     <Row style={isMobile ? {paddingLeft: 45} : {paddingLeft: 140}}>
-                        <Col xs={12}>
+                        <Col xs={12} id="eMoneysection">
                             <img alt="" src={MoneyIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Electronic Money </b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>Simplify the activity and increase the security of digital transactions with licensed electronic money managed by Ezeelink as a means of payment at various merchants that is easy to use or top up</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="vouchersection">
                             <img alt="" src={VoucherIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Digital Voucher </b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>A concise and dynamic digital transaction method, easy to transfer as a gift, or used directly to help manage expenses</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="billscreditsection">
                             <img alt="" src={LaporanTransaksiIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Bills & Credits </b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>Ease of access facilitated by Ezeelink to pay various bills or routine expenses, ranging from electricity or telephone credit,  internet bills, water and various other services</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="">
                             <img alt="" src={EwalletIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Wallet</b></span>
                             <br/>
                             <br/>
                             <span className='sub-title-service'>Our wallet feature makes it easy for users to set up and make financial transactions digitally.</span>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} id="cardlesssection">
                             <img alt="" src={MetodeBayarIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Cardless Cash Withdrawal</b></span>
                             <br/>

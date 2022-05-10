@@ -44,18 +44,18 @@ function NavbarComponent() {
                     <tbody>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#emoneysection">Electronic Money</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic Money</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#transferpaymentsection">Transfer Payment</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#vouchersection">Voucher</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('voucher')}>Voucher</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#walletsection">Wallet</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#billscreditsection">Bills & Credits</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('wallet')}>Wallet</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Bills & Credits</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#loyaltysection">Loyalty</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
                       </tr>
                     </tbody>
                   </table>
