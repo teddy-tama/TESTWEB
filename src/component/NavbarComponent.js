@@ -15,9 +15,23 @@ function NavbarComponent() {
     window.location.reload();
   }
 
-  function aboutUsHandle() {
-    history.push('/AboutUs');
+  function companyProfileClick() {
+    history.push('/AboutUs', { section: 'companyProfile' })
     window.location.reload();
+  }
+
+  function ourVisionClick() {
+    history.push('/AboutUs', { section: 'ourVision' })
+    window.location.reload();
+  }
+
+  function ourJourneyClick() {
+    history.push('/AboutUs', { section: 'ourJourney' })
+    window.location.reload();
+  }
+
+  function careerClick() {
+    
   }
 
   return (
@@ -57,14 +71,14 @@ function NavbarComponent() {
                 </NavDropdown>
                 <Nav.Link href="#features" className='item-navbar'>Merchant & Partner</Nav.Link>
                 <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => companyProfileClick()} href="#" style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => ourVisionClick()} href="#" style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => ourJourneyClick()} href="#" style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
                   <br/>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/aboutus" style={{fontWeight: 600}}>Career</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => careerClick()} href="#" style={{fontWeight: 600}}>Career</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#pricing" className='item-navbar'>FAQ</Nav.Link>
                 <Nav.Link href="#pricing" className='item-navbar'>EN | <span style={{color: '#FFFFFF'}}>ID</span></Nav.Link>
