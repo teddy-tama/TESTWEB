@@ -5,10 +5,11 @@ import EzeelinkIcon from '../assets/icon/ezee_icon.svg'
 import { useHistory, Link} from 'react-router-dom';
 import dropdown from '../assets/icon/dropdown.svg'
 import './navbar.css'
+import mobile from 'is-mobile'
 
 function NavbarComponent() {
   const history = useHistory();
-
+  const isMobile = mobile();
   function linkToProductsAndServices(e){
     e.preventDefault();
     // history.push('/productsandservices');
@@ -49,8 +50,8 @@ function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" style={{paddingLeft: '30%'}}>
-                <NavDropdown title="Products & Services" onClick={(e) => linkToProductsAndServices(e)} className='item-navbar navbar-products' id="collasible-nav-dropdown">
+            <Nav className="me-auto" style={isMobile ? {paddingLeft: '10%'} : {paddingLeft: '30%'}}>
+                <NavDropdown title="Products & Services" onClick={(e) => linkToProductsAndServices(e)} className='item-navbar navbar-products' style={!isMobile ? {maxWidth: 'unset', width: 450} : null} id="collasible-nav-dropdown">
                   <table className="table-products-item">
                     <thead>
                       <th>Corporate and SME</th>
@@ -59,7 +60,7 @@ function NavbarComponent() {
                     <tbody>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic Money</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic <br/>Money</NavDropdown.Item></td>
                       </tr>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
@@ -74,6 +75,15 @@ function NavbarComponent() {
                       </tr>
                     </tbody>
                   </table>
+                  {/* <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item> */}
                 </NavDropdown>
                 <Nav.Link href="#features" className='item-navbar'>Merchant & Partner</Nav.Link>
                 <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">

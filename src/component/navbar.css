@@ -20,7 +20,8 @@
 
 .navbar-products .dropdown-menu {
     background-color: #DF9C43;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .navbar-aboutus .dropdown-menu {
