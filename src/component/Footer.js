@@ -8,17 +8,23 @@ import mobile from 'is-mobile'
 import '../pages/css/HomePage.css'
 function Footer() {
     const isMobile = mobile();
+    const language = sessionStorage.getItem('lang')
+
   return (
     <>
     <div className='layout6'>
         <br/>
             <div>
-                <h1 className='titleBig3'>Discover More about Ezeelink!</h1>
+                {
+                    language === 'eng' ?
+                    <h1 className='titleBig3'>Discover More about Ezeelink!</h1> :
+                    <h1 className='titleBig3'>Temukan Lebih Banyak tentang Ezeelink!</h1>
+                }
             </div>
             <div>
                 <Row>
                     <Col xs={6}>
-                        <img src={logoEzeeLinkIcon} alt="" className='logoEZL' style={{ marginLeft: 30, marginTop: 15 }} />
+                        <img src={logoEzeeLinkIcon} alt="" className='logoEZL' style={{ paddingLeft: 60, marginTop: 15 }} />
                     </Col>
                     {
                         isMobile ? <>
@@ -34,9 +40,15 @@ function Footer() {
                         <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
                             <Col xs={!isMobile ? 3 : 6} style={{ marginTop: 80 }}>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left' }}>
-                                    <div className='text4' style={{ textAlign: 'left', marginTop: 20 }}>
-                                    Address
-                                    </div>
+                                    {
+                                        language === 'eng' ?
+                                        <div className='text4' style={{ textAlign: 'left', marginTop: 20 }}>
+                                            Address
+                                        </div> :
+                                        <div className='text4' style={{ textAlign: 'left', marginTop: 20 }}>
+                                            Alamat
+                                        </div>
+                                    }
                                     <div className='text5' style={{ textAlign: 'left', marginTop: 15 }}>
                                         Wisma Techking 2 JL. AM Sangaji No.24 Jakarta Pusat 10130 Indonesia
                                     </div>
@@ -44,9 +56,15 @@ function Footer() {
                             </Col>
                             <Col xs={!isMobile ? 3 : 6} style={{ marginTop: 100 }}>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left' }}>
-                                    <div className='text4' style={{ textAlign: 'left' }}>
-                                    Download Application
-                                    </div>
+                                    {
+                                        language === 'eng' ?
+                                        <div className='text4' style={{ textAlign: 'left' }}>
+                                            Download Application
+                                        </div> :
+                                        <div className='text4' style={{ textAlign: 'left' }}>
+                                            Download Aplikasi
+                                        </div>
+                                    }
                                     <div className='' style={{ textAlign: 'left', marginTop: 15 }}>
                                         <img style={{ marginBottom: 10 }} className="logoStore" src={googlePlayStoreIcon} alt="" />
                                         <img src={iosAppStoreIcon} alt="" className="logoStore"/>
@@ -58,11 +76,19 @@ function Footer() {
                                 <>
                                     <Col xs={3} style={{ marginTop: 100 }}>
                                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                                            <div className='text4' style={{ textAlign: 'left',  }}>
-                                                Our Contact
-                                                <br/>
-                                                <img src={contactUsIcon} alt="" className='logoContactUs' style={{ marginTop: 20 }} />
-                                            </div>
+                                            {
+                                                language === 'eng' ?
+                                                <div className='text4' style={{ textAlign: 'left',  }}>
+                                                    Our Contact
+                                                    <br/>
+                                                    <img src={contactUsIcon} alt="" className='logoContactUs' style={{ marginTop: 20 }} />
+                                                </div> :
+                                                <div className='text4' style={{ textAlign: 'left',  }}>
+                                                    Kontak Kami
+                                                    <br/>
+                                                    <img src={contactUsIcon} alt="" className='logoContactUs' style={{ marginTop: 20 }} />
+                                                </div>
+                                            }
                                         </div>
                                     </Col>
                                 </> : <></>

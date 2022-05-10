@@ -20,24 +20,25 @@ function NavbarComponent() {
     window.location.reload();
   }
 
-  function companyProfileClick() {
-    history.push('/AboutUs', { section: 'companyProfile' })
-    window.location.reload();
-  }
-
-  function ourVisionClick() {
-    history.push('/AboutUs', { section: 'ourVision' })
-    window.location.reload();
-  }
-
-  function ourJourneyClick() {
-    history.push('/AboutUs', { section: 'ourJourney' })
+  function navigateToAboutUs(section) {
+    history.push('/AboutUs', { section: section })
     window.location.reload();
   }
 
   function careerClick() {
     
   }
+
+  function engLang() {
+    sessionStorage.setItem('lang', 'eng');
+    window.location.reload();
+  }
+
+  function inaLang() {
+    sessionStorage.removeItem('lang');
+    window.location.reload();
+  }
+
 
   return (
     <>
@@ -76,17 +77,21 @@ function NavbarComponent() {
                 </NavDropdown>
                 <Nav.Link href="#features" className='item-navbar'>Merchant & Partner</Nav.Link>
                 <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
-                  <NavDropdown.Item onClick={() => companyProfileClick()} href="#" style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToAboutUs('companyProfile')} style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item onClick={() => ourVisionClick()} href="#" style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToAboutUs('ourVision')} style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
                   <br/>
-                  <NavDropdown.Item onClick={() => ourJourneyClick()} href="#" style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToAboutUs('ourJourney')} style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
                   <br/>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={() => careerClick()} href="#" style={{fontWeight: 600}}>Career</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => navigateToAboutUs()} style={{fontWeight: 600}}>Career</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#pricing" className='item-navbar'>FAQ</Nav.Link>
-                <Nav.Link href="#pricing" className='item-navbar'>EN | <span style={{color: '#FFFFFF'}}>ID</span></Nav.Link>
+                <Nav.Link className='item-navbar'>FAQ</Nav.Link>
+                {
+                  sessionStorage.getItem('lang') === 'eng' ?
+                  <Nav.Link className='item-navbar'><span style={{color: '#FFFFFF'}} onClick={() => engLang()}>EN</span> | <span onClick={() => inaLang()}>ID</span></Nav.Link> :
+                  <Nav.Link className='item-navbar'><span onClick={() => engLang()}>EN</span> | <span style={{color: '#FFFFFF'}} onClick={() => inaLang()}>ID</span></Nav.Link>
+                }
             </Nav>
         </Navbar.Collapse>
       </Container>

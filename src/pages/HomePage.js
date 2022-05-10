@@ -39,6 +39,9 @@ import mobile from 'is-mobile'
 
 function HomePage() {
     const isMobile = mobile();
+    const language = sessionStorage.getItem('lang')
+    // console.log(language, 'language');
+    
   return (
       <>
         <Navbar/>
@@ -47,9 +50,17 @@ function HomePage() {
                 {/* <Container> */}
                     <Row>
                         <Col xs={6} className="columnHead" style={isMobile ? { paddingTop : 25, paddingLeft: 45} : { paddingTop : 180, paddingLeft: 140}}>
-                            <span className='title-head'><b>Make Financial Transactions Easier</b></span>
+                            {
+                                language === 'eng' ?
+                                <span className='title-head'><b>Make Financial Transactions Easier</b></span> :
+                                <span className='title-head'><b>Jadikan Transaksi Keuangan Lebih Mudah</b></span>
+                            }
                             <br/>
-                            <span className='subtitle-head'>Ezeelink platform facilitates digital transactions and provides security guarantees in every financial transaction.</span>
+                            {
+                                language === 'eng' ?
+                                <span className='subtitle-head'>Ezeelink platform facilitates digital transactions and provides security guarantees in every financial transaction.</span> :
+                                <span className='subtitle-head'>Aplikasi dan API Ezeelink memudahkan transaksi digital dan memberikan jaminan keamanan dalam setiap transaksi keuangan.</span>
+                            }
                         </Col>
                         <Col xs={6} style={{paddingTop: 95}}>
                             <img alt="" src={HomePageVector} style={{width: '100%', height: 'auto', maxWidth: 496}}/>
@@ -98,11 +109,19 @@ function HomePage() {
             <div className='explain-section' style={{paddingLeft: 40}}>
                 <br/>
                 <br/>
-                <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span>
+                {
+                    language === 'eng' ?
+                    <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
+                    <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
+                }
                 <br/>
                 <br/>
                 <br/>
-                <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions. </span>
+                {
+                    language === 'eng' ?
+                    <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions.</span> :
+                    <span className='subtitle-head'>Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.</span>
+                }
                 <br/>
                 <br/>
                 <br/>
@@ -113,14 +132,26 @@ function HomePage() {
                             <span className='service-title'><b>QRIS</b></span>
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span> :
+                                <span className='sub-title-service'>Quick Response Code Indonesian Standard merupakan standar kode QR Nasional untuk memfasilitasi transaksi berbasis kode QR di Indonesia melalui Ezeelink yang memiliki izin mengadakan QRIS (issuer) dan menyediakan solusi QRIS di aplikasi atau usaha Anda.</span>
+                            }
                         </Col>
                         <Col xs={6}>
                             <img alt="" src={MoneyIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span className='service-title'><b>Electronic Money </b></span>
+                            {
+                                language === 'eng' ?
+                                <span className='service-title'><b>Electronic Money</b></span> :
+                                <span className='service-title'><b>Uang Elektronik</b></span>
+                            }
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Simplify the activity and increase the security of digital transactions with licensed electronic money managed by Ezeelink as a means of payment at various merchants that is easy to use or top up</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Simplify the activity and increase the security of digital transactions with licensed electronic money managed by Ezeelink as a means of payment at various merchants that is easy to use or top up</span> :
+                                <span className='sub-title-service'>Permudah kegiatan dan tingkatkan keamanan transaksi digital dengan uang elektronik yang di kelola Ezeelink sebagai alat pembayaran di berbagai merchant yang mudah digunakan maupun diisi kembali (top up) dan dapat dikostumisasi sesuai keinginan Anda.</span>
+                            }
                         </Col>
                     </Row>
                     <br/>
@@ -130,14 +161,26 @@ function HomePage() {
                             <span className='service-title'><b>Transfer Payment</b></span>
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Get the convenience of free payment transfers to various banks throughout Indonesia!</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Get the convenience of free payment transfers to various banks throughout Indonesia!</span> :
+                                <span className='sub-title-service'>Dapatkan kemudahan transfer pembayaran tanpa biaya ke berbagai bank di seluruh Indonesia!</span>
+                            }
                         </Col>
                         <Col xs={6}>
                             <img alt="" src={VoucherIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span className='service-title'><b>Digital Voucher </b></span>
+                            {
+                                language === 'eng' ?
+                                <span className='service-title'><b>Digital Voucher</b></span> :
+                                <span className='service-title'><b>Voucher Digital</b></span>
+                            }
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>A concise and dynamic digital transaction method, easy to transfer as a gift, or used directly to help manage expenses</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>A concise and dynamic digital transaction method, easy to transfer as a gift, or used directly to help manage expenses</span> :
+                                <span className='sub-title-service'>Metode transaksi digital yang ringkas dan dinamis, mudah dipindahtangankan sebagai hadiah, maupun digunakan langsung untuk membantu pengaturan pengeluaran</span>
+                            }
                         </Col>
                     </Row>
                     <br/>
@@ -147,14 +190,26 @@ function HomePage() {
                             <span className='service-title'><b>White-Label Wallet</b></span>
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Upgrade your level of business transaction with a digital wallet that can be customized according to your characteristics and brand identity</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Upgrade your level of business transaction with a digital wallet that can be customized according to your characteristics and brand identity</span> :
+                                <span className='sub-title-service'>Upgrade level usaha Anda dengan dompet digital yang bisa dikostumisasi sesuai dengan ciri khas dan identitas brand Anda.</span>
+                            }
                         </Col>
                         <Col xs={6}>
                             <img alt="" src={LaporanTransaksiIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span className='service-title'><b>Bills & Credits </b></span>
+                            {
+                                language === 'eng' ?
+                                <span className='service-title'><b>Bills & Credits</b></span> :
+                                <span className='service-title'><b>Pulsa & Tagihan</b></span>
+                            }
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Ease of access facilitated by Ezeelink to pay various bills or routine expenses, ranging from electricity or telephone credit,  internet bills, water and various other services</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Ease of access facilitated by Ezeelink to pay various bills or routine expenses, ranging from electricity or telephone credit,  internet bills, water and various other services</span> :
+                                <span className='sub-title-service'>Gunakan akses mudah dari Ezeelink untuk pembayaran berbagai tagihan atau pengeluaran rutin, mulai dari listrik, pulsa telepon, tagihan internet, air dan berbagai layanan lainnya.</span>
+                            }
                         </Col>
                     </Row>
                     <br/>
@@ -164,14 +219,22 @@ function HomePage() {
                             <span className='service-title'><b>Loyalty</b></span>
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>Our Loyalty Program is designed to support your business by providing additional benefits to establish closeness and build customer loyalty to your brand.</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Our Loyalty Program is designed to support your business by providing additional benefits to establish closeness and build customer loyalty to your brand.</span> :
+                                <span className='sub-title-service'>Program Loyalty yang kami rancang dan sesuai dengan usaha Anda akan memberikan benefit tambahan untuk menjalin kedekatan dan membangun loyalitas pelanggan terhadap brand Anda.</span>
+                            }
                         </Col>
                         <Col xs={6}>
                             <img alt="" src={MetodeBayarIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span className='service-title'><b>Cardless Cash Withdrawal</b></span>
                             <br/>
                             <br/>
-                            <span className='sub-title-service'>An Inclusive Financial Solutions for people without a bank account will be able to make cash withdrawal.</span>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>An Inclusive Financial Solutions for people without a bank account will be able to make cash withdrawal.</span> :
+                                <span className='sub-title-service'>Tarik Tunai Tanpa Kartu sebagai Solusi Inklusi Keuangan untuk masyarakat yang tidak memiliki rekening di bank.</span>
+                            }
                         </Col>
                     </Row>
                 </Container>
@@ -180,7 +243,11 @@ function HomePage() {
             <div className='layout4'>
             <br/>
                 <div>
-                    <h1 className='titleBig'>Various Types of Services</h1>
+                    {
+                        language === 'eng' ?
+                        <h1 className='titleBig'>Various Types of Services</h1> :
+                        <h1 className='titleBig'>Berbagai Jenis Layanan</h1>
+                    }
                 </div>
                 <br/>
                 <br/>
@@ -191,25 +258,43 @@ function HomePage() {
                                 <Col xs={3}>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                                         <img src={LayananAPIIcon} alt="" className='imgLayAPI' />
-                                        <div className='text1' style={{ textAlign: 'left' }}>
-                                            API based service that connects with your system.
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                API based service that connects with your system.
+                                            </div> :
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                Layanan berbasis API yang menghubungkan dengan sistem Anda.
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                                 <Col xs={3}>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                                         <img src={LayananPluginIcon} alt="" className='imgLayAPI' />
-                                        <div className='text1' style={{ textAlign: 'left' }}>
-                                            Plugin based service that adds features to your app.
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                Plugin based service that adds features to your app.
+                                            </div> :
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                Layanan berbasis Plugin yang menambahkan fitur untuk aplikasi Anda.
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                                 <Col xs={3}>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                                         <img src={LayananPortalIcon} alt="" className='imgLayAPI' />
-                                        <div className='text1' style={{ textAlign: 'left' }}>
-                                            Portal-based service that completes your transaction system.
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                Portal-based service that completes your transaction system.
+                                            </div> :
+                                            <div className='text1' style={{ textAlign: 'left' }}>
+                                                Layanan berbasis Portal yang melengkapi sistem transaksi Anda.
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                             </div>
@@ -221,22 +306,32 @@ function HomePage() {
             <div className='layout5'>
                 <br/>
                 <div>
-                    <h1 className='titleBig2'>With Various Advantages!</h1>
+                    {
+                        language === 'eng' ?
+                        <h1 className='titleBig2'>With Various Advantages!</h1> :
+                        <h1 className='titleBig2'>Dengan Berbagai Keunggulan!</h1>
+                    }
                 </div>
                 <br/>
                 {/* <Container> */}
                     <Row>
                         <Col xs={12} style={{ flexWrap: 'nowrap', overflowX: 'unset' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-evenly', marginBottom: 80 }}>
                                 <Col xs={3}>
                                     <div style={{justifyContent: 'center' }}>
                                         <img src={SelesaikanPemesananIcon} alt="" className='imgLayAPI' style={{marginLeft: '15%'}}/>                                   
                                         <p className='text2' style={{ textAlign: 'left' }}>
                                             Linked in One
                                         </p>
-                                        <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
-                                            Ezeelink platform works quickly in integrating and converting digital (ewallet, e-money) and conventional (bank, cash) transactions. So that it will be easier for you to manage your finances, expenses and income.
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Ezeelink platform works quickly in integrating and converting digital (ewallet, e-money) and conventional (bank, cash) transactions. So that it will be easier for you to manage your finances, expenses and income.
+                                            </div> :
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                                 <Col xs={3} style={{marginTop: '5%' }}>
@@ -245,9 +340,15 @@ function HomePage() {
                                         <p className='text2' style={{ textAlign: 'left' }}>
                                             Competitive Rate
                                         </p>
-                                        <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
-                                        Make sure you enjoy competitive rates for the value, quality and support we provide. So that in the long run it will provide extra benefits for you
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Make sure you enjoy competitive rates for the value, quality and support we provide. So that in the long run it will provide extra benefits for you
+                                            </div> :
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Pastikan Anda menikmati tarif rate yang bersaing untuk value kualitas dan dukungan yang kami berikan. Sehingga dalam jangka panjang akan memberi keuntungan ekstra bagi Anda
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                                 <Col xs={3}>
@@ -256,10 +357,17 @@ function HomePage() {
                                         <p className='text2' style={{ textAlign: 'left' }}>
                                             #MakeitEzee
                                         </p>
-                                        <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
-                                        Ezeelink platform is easy to get in to with self-explanatory information displays making it very convenient to use.
-                                        So that your business growth and daily financial transactions become easier and safer!
-                                        </div>
+                                        {
+                                            language === 'eng' ?
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Ezeelink platform is easy to get in to with self-explanatory information displays making it very convenient to use.
+                                                So that your business growth and daily financial transactions become easier and safer!
+                                            </div> :
+                                            <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
+                                                Platform Ezeelink mudah dikuasai dengan tampilan informasi yang cukup jelas menjadikannya sangat mudah untuk digunakan.
+                                                Sehingga pertumbuhan usaha maupun transaksi finansial harian Anda jadi lebih mudah dan aman!
+                                            </div>
+                                        }
                                     </div>
                                 </Col>
                             </div>
