@@ -44,7 +44,7 @@ function NavbarComponent() {
     <>
     <Navbar expand="lg" style={{width: '100%'}}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
             <img alt="" src={EzeelinkIcon}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

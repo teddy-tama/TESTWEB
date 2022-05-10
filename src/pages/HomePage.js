@@ -109,22 +109,24 @@ function HomePage() {
             <div className='explain-section' style={{paddingLeft: 40}}>
                 <br/>
                 <br/>
-                {
-                    language === 'eng' ?
-                    <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
-                    <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
-                }
-                <br/>
-                <br/>
-                <br/>
-                {
-                    language === 'eng' ?
-                    <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions.</span> :
-                    <span className='subtitle-head'>Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.</span>
-                }
-                <br/>
-                <br/>
-                <br/>
+                <div style={{ paddingLeft: 90 }}>
+                    {
+                        language === 'eng' ?
+                        <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
+                        <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
+                    }
+                    <br/>
+                    <br/>
+                    <br/>
+                    {
+                        language === 'eng' ?
+                        <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions.</span> :
+                        <span className='subtitle-head'>Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.</span>
+                    }
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
                 <Container>
                     <Row>
                         <Col xs={6}>
