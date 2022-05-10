@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl} from 'react-bootstrap';
 import EzeelinkIcon from '../assets/icon/ezee_icon.svg'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link} from 'react-router-dom';
 import dropdown from '../assets/icon/dropdown.svg'
 import './navbar.css'
 
@@ -11,7 +11,12 @@ function NavbarComponent() {
 
   function linkToProductsAndServices(e){
     e.preventDefault();
-    history.push('/productsandservices');
+    // history.push('/productsandservices');
+    // window.location.reload();
+  }
+
+  function navigateToSection(section){
+    history.push('/productsandservices', {section: section});
     window.location.reload();
   }
 
@@ -52,19 +57,19 @@ function NavbarComponent() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Electronic Money</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic Money</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Transfer Payment</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Voucher</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('voucher')}>Voucher</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Wallet</NavDropdown.Item></td>
-                        <td><NavDropdown.Item href="#action/3.1">Bills & Credits</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('wallet')}>Wallet</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Bills & Credits</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item href="#action/3.1">Loyalty</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
                       </tr>
                     </tbody>
                   </table>
