@@ -6,15 +6,17 @@ import { useHistory, Link} from 'react-router-dom';
 import dropdown from '../assets/icon/dropdown.svg'
 import './navbar.css'
 import mobile from 'is-mobile'
+import $ from 'jquery'
 
 function NavbarComponent() {
   const history = useHistory();
   const isMobile = mobile();
-  function linkToProductsAndServices(e){
+    function linkToProductsAndServices(e){
     e.preventDefault();
     // history.push('/productsandservices');
     // window.location.reload();
   }
+  const language = sessionStorage.getItem('lang')
 
   function navigateToSection(section){
     history.push('/productsandservices', {section: section});
@@ -23,6 +25,11 @@ function NavbarComponent() {
 
   function navigateToAboutUs(section) {
     history.push('/AboutUs', { section: section })
+    window.location.reload();
+  }
+
+  function navigateToHome(section) {
+    history.push('/', { section: section })
     window.location.reload();
   }
 
@@ -40,7 +47,6 @@ function NavbarComponent() {
     window.location.reload();
   }
 
-
   return (
     <>
     <Navbar expand="lg" style={{width: '100%'}}>
@@ -51,7 +57,9 @@ function NavbarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" style={isMobile ? {paddingLeft: '10%'} : {paddingLeft: '30%'}}>
-                <NavDropdown title="Products & Services" onClick={(e) => linkToProductsAndServices(e)} className='item-navbar navbar-products' style={!isMobile ? {maxWidth: 'unset', width: 450} : null} id="collasible-nav-dropdown">
+              {
+                language === 'eng' ?
+                <NavDropdown title="Products & Services" onClick={(e) => linkToProductsAndServices(e)} className='item-navbar navbar-products' id="collasible-nav-dropdown">
                   <table className="table-products-item">
                     <thead>
                       <th>Corporate and SME</th>
@@ -75,28 +83,58 @@ function NavbarComponent() {
                       </tr>
                     </tbody>
                   </table>
-                  {/* <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item> */}
+                </NavDropdown> :
+                <NavDropdown title="Produk & Layanan" onClick={(e) => linkToProductsAndServices(e)} className='item-navbar navbar-products' id="collasible-nav-dropdown">
+                  <table className="table-products-item">
+                    <thead>
+                      <th>Korporat & UMKM</th>
+                      <th>Personal (Konsumer)</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Uang <br/>Elektronik</NavDropdown.Item></td>
+                      </tr>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('voucher')}>Voucher</NavDropdown.Item></td>
+                      </tr>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('wallet')}>Wallet</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Pulsa & <br/>Tagihan</NavDropdown.Item></td>
+                      </tr>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </NavDropdown>
-                <Nav.Link href="#features" className='item-navbar'>Merchant & Partner</Nav.Link>
-                <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
-                  <NavDropdown.Item onClick={() => navigateToAboutUs('companyProfile')} style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
-                  <br/>
-                  <NavDropdown.Item onClick={() => navigateToAboutUs('ourVision')} style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
-                  <br/>
-                  <NavDropdown.Item onClick={() => navigateToAboutUs('ourJourney')} style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
-                  <br/>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={() => navigateToAboutUs()} style={{fontWeight: 600}}>Career</NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link className='item-navbar'>FAQ</Nav.Link>
+              }
+                <Nav.Link className='item-navbar' onClick={() => navigateToHome('Merchant')}>Merchant & Partner</Nav.Link>
+                {
+                  language === 'eng' ?
+                  <NavDropdown title="About Us" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('companyProfile')} style={{fontWeight: 600}}>Company Profile</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('ourVision')} style={{fontWeight: 600}}>Our Vision</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('ourJourney')} style={{fontWeight: 600}}>Our Journey</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item onClick={() => navigateToAboutUs()} style={{fontWeight: 600}}>Career</NavDropdown.Item>
+                  </NavDropdown> :
+                  <NavDropdown title="Tentang Kami" className='item-navbar navbar-aboutus' id="collasible-nav-dropdown">
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('companyProfile')} style={{fontWeight: 600}}>Profil Perusahaan</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('ourVision')} style={{fontWeight: 600}}>Visi Ezeelink</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Item onClick={() => navigateToAboutUs('ourJourney')} style={{fontWeight: 600}}>Perjalanan Ezeelink</NavDropdown.Item>
+                    <br/>
+                    <NavDropdown.Divider />
+                    {/* <NavDropdown.Item onClick={() => navigateToAboutUs()} style={{fontWeight: 600}}>Karir</NavDropdown.Item> */}
+                  </NavDropdown>
+                }
+                {/* <Nav.Link className='item-navbar'>FAQ</Nav.Link> */}
                 {
                   sessionStorage.getItem('lang') === 'eng' ?
                   <Nav.Link className='item-navbar'><span style={{color: '#FFFFFF'}} onClick={() => engLang()}>EN</span> | <span onClick={() => inaLang()}>ID</span></Nav.Link> :

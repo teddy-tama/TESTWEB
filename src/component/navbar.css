@@ -28,6 +28,11 @@
     background-color: #DF9C43;
 }
 
+.navbar-nav .dropdown-menu{
+    width: auto;
+    max-width: 450px !important;
+}
+
 .table-products-item{
     width: 100%;
 }

@@ -39,7 +39,6 @@ function ProductServicePage() {
           }
     },[])
 
-    console.log(loading);
     if(!loading){
         if(section === 'qris'){
             document.getElementById( 'qrissection' ).scrollIntoView();

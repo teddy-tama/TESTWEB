@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Navbar from '../component/NavbarComponent'
 import Footer from '../component/Footer'
 import {Row, Col, Container} from 'react-bootstrap'
@@ -36,18 +36,41 @@ import googlePlayStoreIcon from '../assets/icon/googlePlayStoreIcon.png'
 import iosAppStoreIcon from '../assets/icon/iosAppStoreIcon.png'
 import contactUsIcon from '../assets/icon/contactUs.png'
 import mobile from 'is-mobile'
+import {useLocation} from 'react-router-dom'
 
 function HomePage() {
     const isMobile = mobile();
     const language = sessionStorage.getItem('lang')
+    const location = useLocation();
+    const [loading, SetLoading] = useState(true);
     // console.log(language, 'language');
+    useEffect(() => {
+        const onPageLoad = () => {
+            SetLoading(false);
+          };
+
+          if (document.readyState === "complete") {
+            onPageLoad();
+          } else {
+            window.addEventListener("load", onPageLoad);
+            return () => window.removeEventListener("load", onPageLoad);
+          }
+    },[])
     
+    if(!loading){
+        if(location.state !== undefined){
+            if(location.state.section === 'Merchant'){
+                document.getElementById('MerchantAndPartner').scrollIntoView();
+            }
+        }
+    }
+
   return (
       <>
         <Navbar/>
         <div style={{textAlign: 'left', width: '100%'}}>
             <div>
-                {/* <Container> */}
+                <Container>
                     <Row>
                         <Col xs={6} className="columnHead" style={isMobile ? { paddingTop : 25, paddingLeft: 45} : { paddingTop : 180, paddingLeft: 140}}>
                             {
@@ -66,11 +89,13 @@ function HomePage() {
                             <img alt="" src={HomePageVector} style={{width: '100%', height: 'auto', maxWidth: 496}}/>
                         </Col>
                     </Row>
-                {/* </Container> */}
+                </Container>
             </div>
             <br/>
-            <Row className='merchant-section' style={isMobile ? {justifyContent: 'unset'} : { justifyContent : 'center'}}>
-                <Col xs={12} style={{flexWrap : 'nowrap', overflowX: 'auto'}}>
+            <Row className='merchant-section' style={isMobile ? {justifyContent: 'unset'} : { justifyContent : 'center'}} id="MerchantAndPartner">
+            {/* <span className='title-head' style={isMobile ? {paddingLeft: 45, color: 'white'} : {paddingLeft: 140, color: 'white'}}><b>Mechant and Partner</b></span> */}
+            <br/>
+                <Col xs={12} style={{flexWrap : 'nowrap', overflowX: 'auto', paddingTop: 25}}>
                     <div className='merchant-section' style={isMobile ? {justifyContent: 'unset'} : { justifyContent : 'center'}}>
                         <div className='merchant-item' style={{marginLeft: 20}}>
                             <img alt="" src={LogoAlfamart} style={{marginTop: 10}} />
@@ -101,31 +126,40 @@ function HomePage() {
                         </div>
                         <div className='merchant-item'>
                             <img alt="" src={LogoPertamina} style={{marginTop: 10}}/>
-                        </div>                
+                        </div>            
                     </div>
+                       
+                    <br/>
+                        <br/> 
                 </Col>
             </Row>
             <br/>
             <div className='explain-section' style={{paddingLeft: 40}}>
                 <br/>
                 <br/>
-                <div style={{ paddingLeft: 90 }}>
-                    {
-                        language === 'eng' ?
-                        <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
-                        <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
-                    }
-                    <br/>
-                    <br/>
-                    <br/>
-                    {
-                        language === 'eng' ?
-                        <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions.</span> :
-                        <span className='subtitle-head'>Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.</span>
-                    }
-                    <br/>
-                    <br/>
-                    <br/>
+                <div>
+                    <Container>
+                        <Row>
+                            <Col xs={12}>
+                            {
+                            language === 'eng' ?
+                            <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
+                            <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
+                            }
+                            <br/>
+                            <br/>
+                            <br/>
+                            {
+                                language === 'eng' ?
+                                <span className='subtitle-head'>Various Ezeelink products and services are available, both for your daily transaction needs and for your business and financial transactions.</span> :
+                                <span className='subtitle-head'>Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.</span>
+                            }
+                            <br/>
+                            <br/>
+                            <br/>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
                 <Container>
                     <Row>
