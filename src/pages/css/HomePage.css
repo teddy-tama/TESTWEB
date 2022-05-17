@@ -135,7 +135,10 @@
 }
 
 .layout6 {
+    /* max-width: none; */
     width: 100%;
+    /* max-height: none; */
+    height: 100%;
     align-items: center;
     /* position: absolute; */
     left: 0px;
