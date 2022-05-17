@@ -16,6 +16,7 @@ import LaporanTransaksiIcon from '../../assets/icon/Laporan_Transaksi.svg'
 import StarBlackIcon from '../../assets/icon/stars_black.svg'
 import MetodeBayarIcon from '../../assets/icon/Metode_Bayar.svg'
 import PersonalConsumerIcon from '../../assets/icon/PersonalConsumer.svg'
+import RemittanceIcon from '../../assets/icon/Remittance.svg'
 import Footer from '../../component/Footer'
 import {useLocation} from 'react-router-dom'
 import $ from 'jquery'
@@ -54,6 +55,8 @@ function ProductServicePage() {
             document.getElementById( 'billscreditsection' ).scrollIntoView();
         }else if(section === 'loyalty'){
             document.getElementById( 'loyaltysection' ).scrollIntoView();
+        }else if(section === 'remittance'){
+            document.getElementById( 'remittancesection' ).scrollIntoView();
         }
     }
   return (
@@ -218,6 +221,17 @@ function ProductServicePage() {
                                 language === 'eng' ?
                                 <span className='sub-title-service'>Our Loyalty Program is designed to support your business by providing additional benefits to establish closeness and build customer loyalty to your brand.</span> :
                                 <span className='sub-title-service'>Program Loyalty yang kami rancang dan sesuai dengan usaha Anda akan memberikan benefit tambahan untuk menjalin kedekatan dan membangun loyalitas pelanggan terhadap brand Anda.</span>
+                            }
+                        </Col>
+                        <Col xs={12} id="remittancesection">
+                            <img alt="" src={RemittanceIcon} className='icon-img'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span className='service-title'><b>Remittance</b></span>
+                            <br/>
+                            <br/>
+                            {
+                                language === 'eng' ?
+                                <span className='sub-title-service'>Send or receive money, to and from abroad. Cross-border fund transfers are faster, easier and affordable with the Remittance service from Ezeelink.</span> :
+                                <span className='sub-title-service'>Kirim atau terima uang, dari dan ke luar negeri. Transfer dana lintas batas negara lebih cepat, mudah dan terjangkau dengan layanan Remittance dari Ezeelink.</span>
                             }
                         </Col>
                     </Row>

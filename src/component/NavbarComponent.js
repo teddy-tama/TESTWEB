@@ -81,6 +81,9 @@ function NavbarComponent() {
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
                       </tr>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('remittance')}>Remittance</NavDropdown.Item></td>
+                      </tr>
                     </tbody>
                   </table>
                 </NavDropdown> :
@@ -105,6 +108,9 @@ function NavbarComponent() {
                       </tr>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
+                      </tr>
+                      <tr>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('remittance')}>Remittance</NavDropdown.Item></td>
                       </tr>
                     </tbody>
                   </table>
