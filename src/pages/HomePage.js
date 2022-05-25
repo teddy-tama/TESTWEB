@@ -81,7 +81,7 @@ function HomePage() {
                             <br/>
                             {
                                 language === 'eng' ?
-                                <span className='subtitle-head'>Ezeelink platform facilitates digital transactions and provides security guarantees in every financial transaction.</span> :
+                                <span className='subtitle-head'>Ezeelink application and API facilitate digital transactions and provide security guarantees in every financial transaction.</span> :
                                 <span className='subtitle-head'>Aplikasi dan API Ezeelink memudahkan transaksi digital dan memberikan jaminan keamanan dalam setiap transaksi keuangan.</span>
                             }
                         </Col>
@@ -143,7 +143,7 @@ function HomePage() {
                             <Col xs={12}>
                             {
                             language === 'eng' ?
-                            <span className='title-head'><b>Supporting Your Business, Or Financial Management</b></span> :
+                            <span className='title-head'><b>To Support Your Business, Or Financial Management</b></span> :
                             <span className='title-head'><b>Untuk Mendukung Usaha, Atau Pengelolaan Finansial Anda</b></span>
                             }
                             <br/>
@@ -170,7 +170,7 @@ function HomePage() {
                             <br/>
                             {
                                 language === 'eng' ?
-                                <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia’s QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to issue QRIS and provide QRIS solutions in your application or business</span> :
+                                <span className='sub-title-service'>Quick Response Code Indonesian Standard is Indonesia's QR code standard to facilitate QR code-based transactions in Indonesia through Ezeelink which has a license to hold QRIS (issuer) and provides QRIS solutions in your application or business.</span> :
                                 <span className='sub-title-service'>Quick Response Code Indonesian Standard merupakan standar kode QR Nasional untuk memfasilitasi transaksi berbasis kode QR di Indonesia melalui Ezeelink yang memiliki izin mengadakan QRIS (issuer) dan menyediakan solusi QRIS di aplikasi atau usaha Anda.</span>
                             }
                         </Col>
@@ -228,7 +228,7 @@ function HomePage() {
                             <br/>
                             {
                                 language === 'eng' ?
-                                <span className='sub-title-service'>Upgrade your level of business transaction with a digital wallet that can be customized according to your characteristics and brand identity</span> :
+                                <span className='sub-title-service'>Upgrade your business level with a digital wallet that can be customized according to your characteristics and brand identity.</span> :
                                 <span className='sub-title-service'>Upgrade level usaha Anda dengan dompet digital yang bisa dikostumisasi sesuai dengan ciri khas dan identitas brand Anda.</span>
                             }
                         </Col>
@@ -243,7 +243,7 @@ function HomePage() {
                             <br/>
                             {
                                 language === 'eng' ?
-                                <span className='sub-title-service'>Ease of access facilitated by Ezeelink to pay various bills or routine expenses, ranging from electricity or telephone credit,  internet bills, water and various other services</span> :
+                                <span className='sub-title-service'>Use easy access from Ezeelink to pay various bills or routine expenses, ranging from electricity, telephone credit, internet bills, water and various other services.</span> :
                                 <span className='sub-title-service'>Gunakan akses mudah dari Ezeelink untuk pembayaran berbagai tagihan atau pengeluaran rutin, mulai dari listrik, pulsa telepon, tagihan internet, air dan berbagai layanan lainnya.</span>
                             }
                         </Col>
@@ -268,7 +268,7 @@ function HomePage() {
                             <br/>
                             {
                                 language === 'eng' ?
-                                <span className='sub-title-service'>An Inclusive Financial Solutions for people without a bank account will be able to make cash withdrawal.</span> :
+                                <span className='sub-title-service'>Inclusive Financial Solutions for people who do not have a bank account will be able to make cash withdrawals.</span> :
                                 <span className='sub-title-service'>Tarik Tunai Tanpa Kartu sebagai Solusi Inklusi Keuangan untuk masyarakat yang tidak memiliki rekening di bank.</span>
                             }
                         </Col>
@@ -365,7 +365,7 @@ function HomePage() {
                                                 Ezeelink platform works quickly in integrating and converting digital (ewallet, e-money) and conventional (bank, cash) transactions. So that it will be easier for you to manage your finances, expenses and income.
                                             </div> :
                                             <div className='text3' style={{ textAlign: 'left', marginTop: 15 }}>
-                                                Berbagai produk dan layanan Ezeelink tersedia, baik untuk keperluan transaksi sehari-hari maupun untuk transaksi bisnis dan usaha Anda.
+                                                Platform Ezeelink bekerja dengan cepat dalam mengintegrasikan dan mengubah transaksi digital (ewallet, e-money) dan konvensional (bank, cash). Sehingga akan lebih mudah bagi Anda untuk mengatur keuangan, pengeluaran dan pemasukan Anda.
                                             </div>
                                         }
                                     </div>
