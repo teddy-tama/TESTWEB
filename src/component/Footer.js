@@ -4,6 +4,8 @@ import logoEzeeLinkIcon from '../assets/icon/logoEzeeLink.png'
 import googlePlayStoreIcon from '../assets/icon/googlePlayStoreIcon.png'
 import iosAppStoreIcon from '../assets/icon/iosAppStoreIcon.png'
 import contactUsIcon from '../assets/icon/contactUs.png'
+import aspiIcon from '../assets/icon/aspi.svg'
+import fintechIcon from '../assets/icon/fintech.svg'
 import mobile from 'is-mobile'
 import '../pages/css/HomePage.css'
 import biLogo from '../assets/icon/biLogo.png'
@@ -109,6 +111,23 @@ function Footer() {
                                     </div>
                                 </div>
                             </Col>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} style={isMobile ? {paddingLeft: 35, marginTop: 90} : null}>
+                    {
+                            language === 'eng' ?
+                            <div className='text4' style={{ textAlign: 'left' }}>
+                                Member Of
+                            </div> :
+                            <div className='text4' style={{ textAlign: 'left' }}>
+                                Member Dari
+                            </div>
+                        }      
+                        <div className='' style={{ textAlign: 'left', marginTop: 15 }}>
+                            <img src={aspiIcon} alt="BILogo" className="logoStore" style={{ maxWidth: 200 }} /><br/>
+                            <img src={fintechIcon} alt="BILogo" className="logoStore" style={{ maxWidth: 200 }} />
                         </div>
                     </Col>
                 </Row>
