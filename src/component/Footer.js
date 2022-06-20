@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Col, Container} from 'react-bootstrap'
+import {Row, Col} from 'react-bootstrap'
 import logoEzeeLinkIcon from '../assets/icon/logoEzeeLink.png'
 import googlePlayStoreIcon from '../assets/icon/googlePlayStoreIcon.png'
 import iosAppStoreIcon from '../assets/icon/iosAppStoreIcon.png'
