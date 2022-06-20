@@ -14,19 +14,19 @@ function Footer() {
     const language = sessionStorage.getItem('lang')
   return (
     <>
-    <div className='layout6'>
+    <div className='layout6' style={isMobile ? {paddingLeft: 25} : {paddingLeft: 115}}>
         <br/>
             <div>
             {
                     language === 'eng' ?
-                    <h1 className='titleBig3' style={{paddingLeft: '30px !important'}}>Discover More about Ezeelink!</h1> :
-                    <h1 className='titleBig3'  style={{paddingLeft: '30px !important'}}>Temukan Lebih Banyak tentang Ezeelink!</h1>
+                    <h1 className='titleBig3'>Discover More about Ezeelink!</h1> :
+                    <h1 className='titleBig3' >Temukan Lebih Banyak tentang Ezeelink!</h1>
                 }
             </div>
             <div style={{paddingTop: 20}}>
                 <Row>
                     <Col xs={6}>
-                        <img src={logoEzeeLinkIcon} alt="" className='logoEZL' style={{ marginLeft: 30, marginTop: 15 }} />
+                        <img src={logoEzeeLinkIcon} alt="" className='logoEZL' style={{marginTop: 15 }} />
                     </Col>
                     {
                         isMobile ? <>
@@ -40,7 +40,7 @@ function Footer() {
                 <Row>
                     <Col xs={12} style={{ flexWrap: 'nowrap', overflowX: 'unset' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                            <Col xs={3} style={{ marginTop: 80 }}>
+                            <Col xs={3} style={ isMobile ? { marginTop: 80, marginLeft: -25 } : { marginTop: 80} }>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'left' }}>
                                 {
                                         language === 'eng' ?
@@ -115,7 +115,7 @@ function Footer() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} style={isMobile ? {paddingLeft: 35, marginTop: 90} : null}>
+                    <Col xs={12} style={isMobile ? {marginTop: 120} : null}>
                     {
                             language === 'eng' ?
                             <div className='text4' style={{ textAlign: 'left' }}>

@@ -142,7 +142,6 @@
     align-items: center;
     /* position: absolute; */
     left: 0px;
-
     background: #707070;
 }
 
@@ -190,7 +189,6 @@
     position: static;
     /* width: 483px; */
     height: 32px;
-    left: 140px;
     top: 40px;
 
     font-family: 'Exo';
@@ -201,7 +199,6 @@
     /* identical to box height */
 
     text-align: left;
-    padding-left: 60px;
     letter-spacing: 0.02em;
 
     color: #FFFFFF;

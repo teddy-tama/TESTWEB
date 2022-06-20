@@ -67,8 +67,11 @@ function NavbarComponent() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic <br/>Money</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>                        
+                        {isMobile ? 
+                          <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic <br/>Money</NavDropdown.Item></td> : 
+                          <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Electronic Money</NavDropdown.Item></td>
+                        }
                       </tr>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
@@ -95,16 +98,22 @@ function NavbarComponent() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Uang <br/>Elektronik</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('qris')}>QRIS</NavDropdown.Item></td>                        
+                        {isMobile ? 
+                          <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Uang <br/>Elektronik</NavDropdown.Item></td> :
+                          <td><NavDropdown.Item onClick={() => navigateToSection('eMoney')}>Uang Elektronik</NavDropdown.Item></td>
+                        }
                       </tr>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('trfpayment')}>Transfer Payment</NavDropdown.Item></td>
                         <td><NavDropdown.Item onClick={() => navigateToSection('voucher')}>Voucher</NavDropdown.Item></td>
                       </tr>
                       <tr>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('wallet')}>Wallet</NavDropdown.Item></td>
-                        <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Pulsa & <br/>Tagihan</NavDropdown.Item></td>
+                        <td><NavDropdown.Item onClick={() => navigateToSection('wallet')}>Wallet</NavDropdown.Item></td>                        
+                        {isMobile ? 
+                          <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Pulsa & <br/>Tagihan</NavDropdown.Item></td> :
+                          <td><NavDropdown.Item onClick={() => navigateToSection('billsCredit')}>Pulsa & Tagihan</NavDropdown.Item></td>
+                        }
                       </tr>
                       <tr>
                         <td><NavDropdown.Item onClick={() => navigateToSection('loyalty')}>Loyalty</NavDropdown.Item></td>
