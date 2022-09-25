@@ -27,6 +27,9 @@ function AboutUs() {
         }
         
     }, [])
+
+    console.log(location, 'ini location');
+
     if (!loading) {
         if (location.state.section === 'companyProfile') {
             const section1 = document.getElementById('company-profile');
@@ -140,7 +143,7 @@ function AboutUs() {
                         <div className='textWhite' style={{ marginTop: 6 }}>Officially operating and serving business partners.</div> :
                         <div className='textWhite' style={{ marginTop: 6 }}>Resmi beroperasi dan melayani partner bisnis.</div>
                     }
-                    <div className='subtitle-head2'>2013</div>
+                    <div className='subtitle-head2' style={{ marginTop: 30 }}>2013</div>
                     {
                         language === 'eng' ?
                         <div className='textWhite' style={{ marginTop: 6 }}>Develop and expand service into the food and beverage, fashion, lifestyle, mini market, convenience store, electronics and other sectors.</div> :

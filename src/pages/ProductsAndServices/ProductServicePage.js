@@ -40,6 +40,8 @@ function ProductServicePage() {
           }
     },[])
 
+    console.log(section, 'ini section');
+
     if(!loading){
         if(section === 'qris'){
             document.getElementById( 'qrissection' ).scrollIntoView();
